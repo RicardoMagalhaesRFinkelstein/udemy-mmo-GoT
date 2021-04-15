@@ -7,3 +7,10 @@ module.exports.jogo = function (application,req,res) {
     }
 
 }
+
+module.exports.sair = function (application,req,res) {
+    //destruindo a sessão, de forma á deslogar o usuário
+    req.session.destroy(function (err,) {
+        res.render('index', {validacao:{}})
+    })
+}
